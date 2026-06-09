@@ -8,6 +8,45 @@
   //  在线 PK — Socket.IO 系统
   // ═══════════════════════════════════════════════════
 
+  /**
+   * 规范化服务端推送的题目格式（对齐 QuestionBank.normalizeQuestion 输出）。
+   * 确保前端渲染代码无差别处理单人/联机题目。
+   */
+  function normalizeOnlineQuestion(q) {
+    if (!q) return null;
+    var options = (q.options || []).map(function (o) {
+      return {
+        id: o.id || o.action || '',
+        label: o.label || o.action || '',
+        action: o.action || o.id || '',
+        color: o.color,
+        textColor: o.textColor,
+        scale: o.scale,
+        blur: o.blur,
+        brightness: o.brightness,
+        position: o.position,
+      };
+    });
+    if (!options.length && q.type === 'action' && q.correct_action === 'tap') {
+      options = [{ id: 'tap', label: '点一下', action: 'tap' }];
+    }
+    return {
+      id: q.id || '',
+      type: q.type || 'action',
+      source_type: q.type,
+      instruction_text: q.instruction_text || '',
+      prompt_color: q.prompt_color || '#FFFFFF',
+      correct_action: q.correct_action,
+      options: options,
+      time_limit_ms: q.time_limit_ms || 3000,
+      difficulty: q.difficulty || 1,
+      difficulty_level: q.difficulty,
+      difficulty_name: q.difficulty_name,
+      trap: q.trap || '',
+      source: q.source || 'online',
+    };
+  }
+
   OppositeGame.prototype.initSocket = function () {
     var self = this;
     var serverUrl = window.location.origin;
@@ -84,10 +123,10 @@
     this.socket.on('new_question', function (data) {
       if (!data || data.room_id !== self.roomId) return;
       console.log('[PK] 新题目 round=' + data.round, data);
-      var q = data.question;
+      var q = normalizeOnlineQuestion(data.question);
       self.question = q;
-      self.timeLimit = data.time_limit_ms || 8000;
-      self.onlineTimeLimit = data.time_limit_ms || 8000;
+      self.timeLimit = data.time_limit_ms || 3000;
+      self.onlineTimeLimit = data.time_limit_ms || 3000;
       self.timerProgress = 1;
       self.onlineRound = data.round;
       self.onlineRoundToken = data.round_token;
@@ -154,7 +193,11 @@
       self.onlineResult = {
         winner: winner,
         myScore: myResult.score || 0,
-        opponentScore: (opponentResult ? opponentResult.score : 0) || 0
+        opponentScore: (opponentResult ? opponentResult.score : 0) || 0,
+        myTotalTimeMs: myResult.total_time_ms || 0,
+        opponentTotalTimeMs: (opponentResult ? opponentResult.total_time_ms : 0) || 0,
+        myMaxCombo: myResult.max_combo || 0,
+        opponentMaxCombo: (opponentResult ? opponentResult.max_combo : 0) || 0,
       };
       self.onlineScores.me = myResult.score || 0;
       self.opponentScore = (opponentResult ? opponentResult.score : 0) || 0;

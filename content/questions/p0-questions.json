@@ -1,0 +1,3668 @@
+{
+  "description": "P0 稳定题库，供服务端 Online PK 和 API 使用。由 generate-question-pool.mjs 自动生成。",
+  "generated_at": "2026-06-09T09:07:50.311Z",
+  "total": 140,
+  "questions": [
+    {
+      "id": "direction_easy_001",
+      "type": "direction",
+      "instruction_text": "向左滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_right",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_002",
+      "type": "direction",
+      "instruction_text": "向右滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_left",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_003",
+      "type": "direction",
+      "instruction_text": "向上滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_down",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_004",
+      "type": "direction",
+      "instruction_text": "向下滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_up",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_005",
+      "type": "direction",
+      "instruction_text": "点左边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_006",
+      "type": "direction",
+      "instruction_text": "点右边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_007",
+      "type": "direction",
+      "instruction_text": "点上面",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_bottom",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_008",
+      "type": "direction",
+      "instruction_text": "点下面",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_top",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_009",
+      "type": "direction",
+      "instruction_text": "往左",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_right",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_010",
+      "type": "direction",
+      "instruction_text": "往右",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_left",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_011",
+      "type": "direction",
+      "instruction_text": "往上",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_down",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_012",
+      "type": "direction",
+      "instruction_text": "往下",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_up",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_013",
+      "type": "direction",
+      "instruction_text": "左边按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_014",
+      "type": "direction",
+      "instruction_text": "右边按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_015",
+      "type": "direction",
+      "instruction_text": "上面按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_bottom",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_016",
+      "type": "direction",
+      "instruction_text": "下面按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_top",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_017",
+      "type": "direction",
+      "instruction_text": "向左",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_right",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_018",
+      "type": "direction",
+      "instruction_text": "向右",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_left",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_019",
+      "type": "direction",
+      "instruction_text": "上滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_down",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_020",
+      "type": "direction",
+      "instruction_text": "下滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_up",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_021",
+      "type": "direction",
+      "instruction_text": "左边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_022",
+      "type": "direction",
+      "instruction_text": "右边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_023",
+      "type": "direction",
+      "instruction_text": "上面",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_bottom",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_024",
+      "type": "direction",
+      "instruction_text": "下面",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_top",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_025",
+      "type": "direction",
+      "instruction_text": "往左滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_right",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_026",
+      "type": "direction",
+      "instruction_text": "往右滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_left",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_027",
+      "type": "direction",
+      "instruction_text": "往上滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_down",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_028",
+      "type": "direction",
+      "instruction_text": "往下滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_up",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_029",
+      "type": "direction",
+      "instruction_text": "点顶部",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_bottom",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_030",
+      "type": "direction",
+      "instruction_text": "点底部",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_top",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_031",
+      "type": "direction",
+      "instruction_text": "点击左侧",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_032",
+      "type": "direction",
+      "instruction_text": "点击右侧",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_033",
+      "type": "direction",
+      "instruction_text": "上方按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_bottom",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_034",
+      "type": "direction",
+      "instruction_text": "下方按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_top",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_easy_035",
+      "type": "direction",
+      "instruction_text": "向左划",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_right",
+      "options": null,
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "基础方向反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_001",
+      "type": "action",
+      "instruction_text": "别点",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_002",
+      "type": "action",
+      "instruction_text": "不要点",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_003",
+      "type": "action",
+      "instruction_text": "禁止点击",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_004",
+      "type": "action",
+      "instruction_text": "快点",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_005",
+      "type": "action",
+      "instruction_text": "马上点",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_006",
+      "type": "action",
+      "instruction_text": "现在点",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_007",
+      "type": "action",
+      "instruction_text": "等一下",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_008",
+      "type": "action",
+      "instruction_text": "忍住",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_009",
+      "type": "action",
+      "instruction_text": "停下",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_010",
+      "type": "action",
+      "instruction_text": "动手",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_011",
+      "type": "action",
+      "instruction_text": "别动",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_012",
+      "type": "action",
+      "instruction_text": "别按",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_013",
+      "type": "action",
+      "instruction_text": "快按",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_014",
+      "type": "action",
+      "instruction_text": "立即点击",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_015",
+      "type": "action",
+      "instruction_text": "立即按下",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_016",
+      "type": "action",
+      "instruction_text": "禁止按下",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_017",
+      "type": "action",
+      "instruction_text": "别碰",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_018",
+      "type": "action",
+      "instruction_text": "别点按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_019",
+      "type": "action",
+      "instruction_text": "快来点",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_020",
+      "type": "action",
+      "instruction_text": "马上按下",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_021",
+      "type": "action",
+      "instruction_text": "立刻点",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_022",
+      "type": "action",
+      "instruction_text": "暂时不要点",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_023",
+      "type": "action",
+      "instruction_text": "不要按",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_024",
+      "type": "action",
+      "instruction_text": "停止点击",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "tap",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "action_easy_025",
+      "type": "action",
+      "instruction_text": "请按下",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "wait",
+      "options": null,
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "动作克制",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_001",
+      "type": "logic_reversal",
+      "instruction_text": "冰是冷的",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_002",
+      "type": "logic_reversal",
+      "instruction_text": "火是热的",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_003",
+      "type": "logic_reversal",
+      "instruction_text": "水会流动",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_004",
+      "type": "logic_reversal",
+      "instruction_text": "太阳会发光",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_005",
+      "type": "logic_reversal",
+      "instruction_text": "白天有太阳",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_006",
+      "type": "logic_reversal",
+      "instruction_text": "1+1=2",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_007",
+      "type": "logic_reversal",
+      "instruction_text": "猫是动物",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_008",
+      "type": "logic_reversal",
+      "instruction_text": "鱼会游泳",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_009",
+      "type": "logic_reversal",
+      "instruction_text": "雪是白的",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_010",
+      "type": "logic_reversal",
+      "instruction_text": "石头很软",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_011",
+      "type": "logic_reversal",
+      "instruction_text": "火是冷的",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_012",
+      "type": "logic_reversal",
+      "instruction_text": "水是干的",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_013",
+      "type": "logic_reversal",
+      "instruction_text": "鸟会游泳",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_014",
+      "type": "logic_reversal",
+      "instruction_text": "太阳是方的",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1200,
+      "difficulty": 1,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_easy_015",
+      "type": "logic_reversal",
+      "instruction_text": "零下很热",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 2,
+      "difficulty_name": "easy",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_1",
+        "challenge_warmup",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_001",
+      "type": "color",
+      "instruction_text": "点红色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "blue",
+      "options": [
+        {
+          "id": "red",
+          "label": "红色",
+          "action": "red",
+          "color": "#FF3D5A"
+        },
+        {
+          "id": "blue",
+          "label": "蓝色",
+          "action": "blue",
+          "color": "#3483FF"
+        },
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_002",
+      "type": "color",
+      "instruction_text": "点黄色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "purple",
+      "options": [
+        {
+          "id": "yellow",
+          "label": "黄色",
+          "action": "yellow",
+          "color": "#FFD600"
+        },
+        {
+          "id": "purple",
+          "label": "紫色",
+          "action": "purple",
+          "color": "#A855F7"
+        },
+        {
+          "id": "blue",
+          "label": "蓝色",
+          "action": "blue",
+          "color": "#3483FF"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_003",
+      "type": "color",
+      "instruction_text": "点绿色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "orange",
+      "options": [
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        },
+        {
+          "id": "orange",
+          "label": "橙色",
+          "action": "orange",
+          "color": "#FF8A00"
+        },
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_004",
+      "type": "color",
+      "instruction_text": "点黑色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "white",
+      "options": [
+        {
+          "id": "black",
+          "label": "黑色",
+          "action": "black",
+          "color": "#000000"
+        },
+        {
+          "id": "white",
+          "label": "白色",
+          "action": "white",
+          "color": "#FFFFFF"
+        },
+        {
+          "id": "gray",
+          "label": "灰色",
+          "action": "gray",
+          "color": "#8E8E8E"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_005",
+      "type": "color",
+      "instruction_text": "点青色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "pink",
+      "options": [
+        {
+          "id": "cyan",
+          "label": "青色",
+          "action": "cyan",
+          "color": "#00FFC7"
+        },
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        },
+        {
+          "id": "yellow",
+          "label": "黄色",
+          "action": "yellow",
+          "color": "#FFD600"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_006",
+      "type": "color",
+      "instruction_text": "点红色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "green",
+      "options": [
+        {
+          "id": "red",
+          "label": "红色",
+          "action": "red",
+          "color": "#FF3D5A"
+        },
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        },
+        {
+          "id": "blue",
+          "label": "蓝色",
+          "action": "blue",
+          "color": "#3483FF"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_007",
+      "type": "color",
+      "instruction_text": "点黄色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "blue",
+      "options": [
+        {
+          "id": "yellow",
+          "label": "黄色",
+          "action": "yellow",
+          "color": "#FFD600"
+        },
+        {
+          "id": "blue",
+          "label": "蓝色",
+          "action": "blue",
+          "color": "#3483FF"
+        },
+        {
+          "id": "white",
+          "label": "白色",
+          "action": "white",
+          "color": "#FFFFFF"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_008",
+      "type": "color",
+      "instruction_text": "点紫色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "orange",
+      "options": [
+        {
+          "id": "purple",
+          "label": "紫色",
+          "action": "purple",
+          "color": "#A855F7"
+        },
+        {
+          "id": "orange",
+          "label": "橙色",
+          "action": "orange",
+          "color": "#FF8A00"
+        },
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_009",
+      "type": "color",
+      "instruction_text": "点黑色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "cyan",
+      "options": [
+        {
+          "id": "black",
+          "label": "黑色",
+          "action": "black",
+          "color": "#000000"
+        },
+        {
+          "id": "cyan",
+          "label": "青色",
+          "action": "cyan",
+          "color": "#00FFC7"
+        },
+        {
+          "id": "red",
+          "label": "红色",
+          "action": "red",
+          "color": "#FF3D5A"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_010",
+      "type": "color",
+      "instruction_text": "点白色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "pink",
+      "options": [
+        {
+          "id": "white",
+          "label": "白色",
+          "action": "white",
+          "color": "#FFFFFF"
+        },
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        },
+        {
+          "id": "purple",
+          "label": "紫色",
+          "action": "purple",
+          "color": "#A855F7"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_011",
+      "type": "color",
+      "instruction_text": "点绿色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "purple",
+      "options": [
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        },
+        {
+          "id": "purple",
+          "label": "紫色",
+          "action": "purple",
+          "color": "#A855F7"
+        },
+        {
+          "id": "blue",
+          "label": "蓝色",
+          "action": "blue",
+          "color": "#3483FF"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_012",
+      "type": "color",
+      "instruction_text": "点蓝色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "orange",
+      "options": [
+        {
+          "id": "blue",
+          "label": "蓝色",
+          "action": "blue",
+          "color": "#3483FF"
+        },
+        {
+          "id": "orange",
+          "label": "橙色",
+          "action": "orange",
+          "color": "#FF8A00"
+        },
+        {
+          "id": "yellow",
+          "label": "黄色",
+          "action": "yellow",
+          "color": "#FFD600"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_013",
+      "type": "color",
+      "instruction_text": "点红色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "yellow",
+      "options": [
+        {
+          "id": "red",
+          "label": "红色",
+          "action": "red",
+          "color": "#FF3D5A"
+        },
+        {
+          "id": "yellow",
+          "label": "黄色",
+          "action": "yellow",
+          "color": "#FFD600"
+        },
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_014",
+      "type": "color",
+      "instruction_text": "点粉色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "purple",
+      "options": [
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        },
+        {
+          "id": "purple",
+          "label": "紫色",
+          "action": "purple",
+          "color": "#A855F7"
+        },
+        {
+          "id": "orange",
+          "label": "橙色",
+          "action": "orange",
+          "color": "#FF8A00"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_015",
+      "type": "color",
+      "instruction_text": "点青色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "green",
+      "options": [
+        {
+          "id": "cyan",
+          "label": "青色",
+          "action": "cyan",
+          "color": "#00FFC7"
+        },
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        },
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_016",
+      "type": "color",
+      "instruction_text": "点橙色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "black",
+      "options": [
+        {
+          "id": "orange",
+          "label": "橙色",
+          "action": "orange",
+          "color": "#FF8A00"
+        },
+        {
+          "id": "black",
+          "label": "黑色",
+          "action": "black",
+          "color": "#000000"
+        },
+        {
+          "id": "yellow",
+          "label": "黄色",
+          "action": "yellow",
+          "color": "#FFD600"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_017",
+      "type": "color",
+      "instruction_text": "点白色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "blue",
+      "options": [
+        {
+          "id": "white",
+          "label": "白色",
+          "action": "white",
+          "color": "#FFFFFF"
+        },
+        {
+          "id": "blue",
+          "label": "蓝色",
+          "action": "blue",
+          "color": "#3483FF"
+        },
+        {
+          "id": "black",
+          "label": "黑色",
+          "action": "black",
+          "color": "#000000"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_018",
+      "type": "color",
+      "instruction_text": "点蓝色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "black",
+      "options": [
+        {
+          "id": "blue",
+          "label": "蓝色",
+          "action": "blue",
+          "color": "#3483FF"
+        },
+        {
+          "id": "black",
+          "label": "黑色",
+          "action": "black",
+          "color": "#000000"
+        },
+        {
+          "id": "orange",
+          "label": "橙色",
+          "action": "orange",
+          "color": "#FF8A00"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_019",
+      "type": "color",
+      "instruction_text": "点粉色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "green",
+      "options": [
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        },
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        },
+        {
+          "id": "yellow",
+          "label": "黄色",
+          "action": "yellow",
+          "color": "#FFD600"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_020",
+      "type": "color",
+      "instruction_text": "点紫色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "pink",
+      "options": [
+        {
+          "id": "purple",
+          "label": "紫色",
+          "action": "purple",
+          "color": "#A855F7"
+        },
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        },
+        {
+          "id": "cyan",
+          "label": "青色",
+          "action": "cyan",
+          "color": "#00FFC7"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_021",
+      "type": "color",
+      "instruction_text": "点绿色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "pink",
+      "options": [
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        },
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        },
+        {
+          "id": "orange",
+          "label": "橙色",
+          "action": "orange",
+          "color": "#FF8A00"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_022",
+      "type": "color",
+      "instruction_text": "点黄色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "green",
+      "options": [
+        {
+          "id": "yellow",
+          "label": "黄色",
+          "action": "yellow",
+          "color": "#FFD600"
+        },
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        },
+        {
+          "id": "cyan",
+          "label": "青色",
+          "action": "cyan",
+          "color": "#00FFC7"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_023",
+      "type": "color",
+      "instruction_text": "点白色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "black",
+      "options": [
+        {
+          "id": "white",
+          "label": "白色",
+          "action": "white",
+          "color": "#FFFFFF"
+        },
+        {
+          "id": "black",
+          "label": "黑色",
+          "action": "black",
+          "color": "#000000"
+        },
+        {
+          "id": "cyan",
+          "label": "青色",
+          "action": "cyan",
+          "color": "#00FFC7"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_024",
+      "type": "color",
+      "instruction_text": "点蓝色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "pink",
+      "options": [
+        {
+          "id": "blue",
+          "label": "蓝色",
+          "action": "blue",
+          "color": "#3483FF"
+        },
+        {
+          "id": "pink",
+          "label": "粉色",
+          "action": "pink",
+          "color": "#FF5CB0"
+        },
+        {
+          "id": "purple",
+          "label": "紫色",
+          "action": "purple",
+          "color": "#A855F7"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "color_medium_025",
+      "type": "color",
+      "instruction_text": "点黑色",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "green",
+      "options": [
+        {
+          "id": "black",
+          "label": "黑色",
+          "action": "black",
+          "color": "#000000"
+        },
+        {
+          "id": "green",
+          "label": "绿色",
+          "action": "green",
+          "color": "#00FF9D"
+        },
+        {
+          "id": "purple",
+          "label": "紫色",
+          "action": "purple",
+          "color": "#A855F7"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "颜色干扰",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_051",
+      "type": "direction",
+      "instruction_text": "点击左边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_052",
+      "type": "direction",
+      "instruction_text": "点击右边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_053",
+      "type": "direction",
+      "instruction_text": "点击顶部",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_bottom",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_054",
+      "type": "direction",
+      "instruction_text": "点击底部",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_top",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_055",
+      "type": "direction",
+      "instruction_text": "点击左侧按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_056",
+      "type": "direction",
+      "instruction_text": "点击右侧按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_057",
+      "type": "direction",
+      "instruction_text": "点击上边按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_bottom",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_058",
+      "type": "direction",
+      "instruction_text": "点击下边按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_top",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_059",
+      "type": "direction",
+      "instruction_text": "点左边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_medium_060",
+      "type": "direction",
+      "instruction_text": "点右边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1100,
+      "difficulty": 3,
+      "difficulty_name": "medium",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_2",
+        "challenge_middle",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_001",
+      "type": "direction",
+      "instruction_text": "往左滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_right",
+      "options": null,
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_002",
+      "type": "direction",
+      "instruction_text": "往右滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_left",
+      "options": null,
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_003",
+      "type": "direction",
+      "instruction_text": "往上滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_down",
+      "options": null,
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_004",
+      "type": "direction",
+      "instruction_text": "往下滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_up",
+      "options": null,
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_005",
+      "type": "direction",
+      "instruction_text": "点左侧",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_006",
+      "type": "direction",
+      "instruction_text": "点右侧",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_007",
+      "type": "direction",
+      "instruction_text": "点上方",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_bottom",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_008",
+      "type": "direction",
+      "instruction_text": "点下方",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_top",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_009",
+      "type": "direction",
+      "instruction_text": "别点左边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_010",
+      "type": "direction",
+      "instruction_text": "别点右边",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_011",
+      "type": "direction",
+      "instruction_text": "不要向上滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_up",
+      "options": null,
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_012",
+      "type": "direction",
+      "instruction_text": "不要向下滑",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "swipe_down",
+      "options": null,
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_013",
+      "type": "direction",
+      "instruction_text": "左边按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_right",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_014",
+      "type": "direction",
+      "instruction_text": "右边按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_left",
+      "options": [
+        {
+          "id": "left",
+          "label": "左",
+          "action": "click_left",
+          "position": "left"
+        },
+        {
+          "id": "right",
+          "label": "右",
+          "action": "click_right",
+          "position": "right"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "direction_hard_015",
+      "type": "direction",
+      "instruction_text": "顶端按钮",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "click_bottom",
+      "options": [
+        {
+          "id": "top",
+          "label": "上",
+          "action": "click_top",
+          "position": "top"
+        },
+        {
+          "id": "bottom",
+          "label": "下",
+          "action": "click_bottom",
+          "position": "bottom"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "方向反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_001",
+      "type": "logic_reversal",
+      "instruction_text": "冰是冷的吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_002",
+      "type": "logic_reversal",
+      "instruction_text": "火是热的吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_003",
+      "type": "logic_reversal",
+      "instruction_text": "太阳从东边升起吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_004",
+      "type": "logic_reversal",
+      "instruction_text": "1+1=2吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_005",
+      "type": "logic_reversal",
+      "instruction_text": "白天有太阳吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_006",
+      "type": "logic_reversal",
+      "instruction_text": "水是干的吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_007",
+      "type": "logic_reversal",
+      "instruction_text": "草是蓝色的吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_008",
+      "type": "logic_reversal",
+      "instruction_text": "猫会飞吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_009",
+      "type": "logic_reversal",
+      "instruction_text": "鱼会游泳吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_hard_010",
+      "type": "logic_reversal",
+      "instruction_text": "雪是热的吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 1000,
+      "difficulty": 4,
+      "difficulty_name": "hard",
+      "trap": "常识反转",
+      "mode_tags": [
+        "single_level_3",
+        "challenge_hard",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_boss_001",
+      "type": "logic_reversal",
+      "instruction_text": "冰是热的吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 900,
+      "difficulty": 5,
+      "difficulty_name": "boss",
+      "trap": "常识反转",
+      "mode_tags": [
+        "challenge_boss",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_boss_002",
+      "type": "logic_reversal",
+      "instruction_text": "火是冷的吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 900,
+      "difficulty": 5,
+      "difficulty_name": "boss",
+      "trap": "常识反转",
+      "mode_tags": [
+        "challenge_boss",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_boss_003",
+      "type": "logic_reversal",
+      "instruction_text": "太阳从西方升起吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 900,
+      "difficulty": 5,
+      "difficulty_name": "boss",
+      "trap": "常识反转",
+      "mode_tags": [
+        "challenge_boss",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_boss_004",
+      "type": "logic_reversal",
+      "instruction_text": "1+1=3吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_false",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 900,
+      "difficulty": 5,
+      "difficulty_name": "boss",
+      "trap": "常识反转",
+      "mode_tags": [
+        "challenge_boss",
+        "shadow_challenge"
+      ]
+    },
+    {
+      "id": "logic_reversal_boss_005",
+      "type": "logic_reversal",
+      "instruction_text": "水会流动吗?",
+      "prompt_color": "#FFFFFF",
+      "correct_action": "btn_true",
+      "options": [
+        {
+          "id": "btn_true",
+          "label": "对",
+          "action": "btn_true"
+        },
+        {
+          "id": "btn_false",
+          "label": "错",
+          "action": "btn_false"
+        }
+      ],
+      "time_limit_ms": 900,
+      "difficulty": 5,
+      "difficulty_name": "boss",
+      "trap": "常识反转",
+      "mode_tags": [
+        "challenge_boss",
+        "shadow_challenge"
+      ]
+    }
+  ]
+}

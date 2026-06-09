@@ -33,7 +33,6 @@ const q = await generateQuestion("easy");
  *   3. import { generateQuestion, analyzePerformance, ... } from "./api-client.js"
  *   4. 直接调用，所有函数返回 Promise
  * 
- * @author 殷文才（后端/架构）
  * @for 前端A — 对接反着来游戏后端
  */
 

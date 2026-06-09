@@ -2,6 +2,15 @@
  * 《反着来》游戏引擎
  * Canvas 渲染 + 触控事件 + 游戏状态机 + 全逻辑
  * 依赖：data/question-bank.js（全局 QuestionBank）
+ *
+ * @author 四个菜鸟想上天团队
+ *
+ * ═══════════════════════════════════════════════════════════════
+ * [未使用代码] 以下功能已从首页移除，相关代码保留但未激活：
+ *   - AI神经挑战：_startAIChallenge() / _onAIQuestionsReady() / fetchAIQuestionBatch()
+ *   - 每日挑战：_startDailyChallenge() / _startDailyGame() / _shuffleWithSeed()
+ *   如需重新启用，恢复首页按钮并取消对应的 [未使用] 标记即可
+ * ═══════════════════════════════════════════════════════════════
  */
 (function () {
   'use strict';
@@ -38,11 +47,12 @@
     {
       level: 6,
       title: '意识反转',
-      label: '难题 / BOSS',
+      label: '难题 / BOSS / 体感',
       timeLimit: 750,
       questionMix: [
-        { difficulty: 'hard', count: 5 },
-        { difficulty: 'boss', count: 5 }
+        { difficulty: 'hard', count: 4 },
+        { difficulty: 'boss', count: 4 },
+        { difficulty: 'motion', count: 2 }
       ]
     }
   ];
@@ -122,8 +132,12 @@
     // 游戏状态
     this.page = 'home';         // home | level_select | online_pk | tutorial | playing | pk_transition | result | leaderboard
     this.gameMode = 'single';   // single | local_pk
-    this.playMode = 'level';    // level | challenge | practice
+    this.playMode = 'level';    // level | challenge | practice | ai_challenge | daily
     this.selectedLevel = 1;
+    this.aiQuestions = [];
+    this.aiFetchProgress = { fetched: 0, target: 0 };
+    this.dailySeed = 0;
+    this.dailyDate = '';
     this.levelSelectPage = 0;
     this.levelResult = null;
     this.homeNotice = '';
@@ -141,7 +155,7 @@
     this.onlineResult = null;
     this.onlineQueuePos = -1;
     this.onlineQuestionStartMs = 0;
-    this.onlineTimeLimit = 8000;
+    this.onlineTimeLimit = 3000;
     this.onlineScores = { me: 0 };
     this.onlinePlayerName = '';
     this.onlineSid = '';
@@ -585,6 +599,13 @@
       this.playerBResult = null;
       this.localPkResult = null;
       this.goToPage('tutorial');
+    // [未使用 - AI神经挑战已从首页移除]
+    } else if (btn && btn.id === 'aiChallengeStart') {
+      this.homeNotice = '';
+      this.gameMode = 'single';
+      this.playMode = 'ai_challenge';
+      this.currentPlayer = 'A';
+      this.goToPage('tutorial');
     } else if (btn && btn.id === 'practiceStart') {
       this.homeNotice = '';
       this.gameMode = 'single';
@@ -593,6 +614,13 @@
       this.goToPage('tutorial');
     } else if (btn && btn.id === 'shareHome') {
       this.shareGame();
+    // [未使用 - 每日挑战已从首页移除]
+    } else if (btn && btn.id === 'dailyChallengeStart') {
+      this.homeNotice = '';
+      this.gameMode = 'single';
+      this.playMode = 'daily';
+      this.currentPlayer = 'A';
+      this._startDailyChallenge();
     } else if (btn && btn.id === 'leaderboardBtn') {
       this.goToPage('leaderboard');
     } else if (btn && btn.id === 'toggleBGM') {
@@ -974,6 +1002,10 @@
       if (this.gameMode === 'local_pk') {
         return '我们刚刚在《反着来》PK 了一局，你也来试试？';
       }
+      if (this.playMode === 'daily') {
+        return '我在《反着来》' + (this.dailyDate || '今日') + '每日挑战拿了 ' +
+          this.score + '/' + this.getTotalQuestions() + '，你也来试试？';
+      }
       if (this.playMode === 'practice') {
         return '我在《反着来》练习了一局，手差点背叛我。';
       }
@@ -1083,7 +1115,8 @@
   };
 
   OppositeGame.prototype.saveToLeaderboard = function () {
-    if (this.playMode !== 'challenge' && this.playMode !== 'level') return null;
+    if (this.playMode !== 'challenge' && this.playMode !== 'level' &&
+        this.playMode !== 'ai_challenge' && this.playMode !== 'daily') return null;
     var entry = {
       playerName: this.getLeaderboardPlayerName(),
       mode: this.gameMode,
@@ -1132,6 +1165,89 @@
     } catch (_) {
       // 静默忽略
     }
+  };
+
+  // [未使用 - 每日挑战已从首页移除]
+  /**
+   * 每日挑战：从 API 获取当日种子，使用确定性随机排题
+   */
+  OppositeGame.prototype._startDailyChallenge = function () {
+    var self = this;
+    // 先用客户端日期做降级种子
+    var now = new Date();
+    var dateStr = now.getFullYear() + '-' +
+      ('0' + (now.getMonth() + 1)).slice(-2) + '-' +
+      ('0' + now.getDate()).slice(-2);
+    this.dailyDate = dateStr;
+    // 默认种子：基于日期字符串的简单 hash
+    this.dailySeed = dateStr.split('').reduce(function (hash, ch) {
+      return ((hash << 5) - hash + ch.charCodeAt(0)) | 0;
+    }, 0);
+
+    if (window.AppApi && typeof window.AppApi.getDailyChallenge === 'function') {
+      window.AppApi.getDailyChallenge(function (err, data) {
+        if (!err && data && typeof data.seed === 'number') {
+          self.dailySeed = data.seed;
+          self.dailyDate = data.date || self.dailyDate;
+        }
+        self._startDailyGame();
+      });
+    } else {
+      this._startDailyGame();
+    }
+  };
+
+  // [未使用 - 每日挑战已从首页移除]
+  OppositeGame.prototype._startDailyGame = function () {
+    // 使用确定性种子选择题目
+    var baseQuestions = QuestionBank.getQuestions({
+      mode: 'challenge',
+      count: QUESTIONS_PER_GAME
+    });
+    this.questions = this._shuffleWithSeed(baseQuestions, this.dailySeed);
+    this.currentIndex = 0;
+    this.score = 0;
+    this.totalScore = 0;
+    this.combo = 0;
+    this.maxCombo = 0;
+    this.fastestReaction = Infinity;
+    this.answers = [];
+    this.question = null;
+    this.questionStartTime = 0;
+    this.timeLimit = DEFAULT_TIME_LIMIT;
+    this.timerProgress = 1;
+    this.questionAnswered = true;
+    this.feedbackLines = [];
+    this.feedbackEndTime = 0;
+    this.lastRoundScore = 0;
+    this.lastSpeedLabel = '';
+    this.lastComboBonus = 0;
+    this.levelResult = null;
+    this.hiddenAt = document.hidden ? Date.now() : 0;
+    this.shareNotice = '';
+    this.goToPage('playing');
+  };
+
+  // [未使用 - 每日挑战已从首页移除，仅 _startDailyGame 调用]
+  /**
+   * 确定性洗牌算法（Fisher-Yates + seeded PRNG）
+   */
+  OppositeGame.prototype._shuffleWithSeed = function (items, seed) {
+    var result = items.slice();
+    var s = seed | 0;
+    function mulberry32() {
+      s = (s + 0x6D2B79F5) | 0;
+      var t = Math.imul(s ^ (s >>> 15), 1 | s);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    }
+    for (var i = result.length - 1; i > 0; i--) {
+      var j = Math.floor(mulberry32() * (i + 1));
+      var temp = result[i];
+      result[i] = result[j];
+      result[j] = temp;
+    }
+    return result;
   };
 
   /**
@@ -1273,6 +1389,19 @@
       unlockAllAudio();
     }
 
+    // [未使用 - AI神经挑战已从首页移除]
+    // ── AI 挑战模式：异步获取 AI 题目 ──
+    if (this.playMode === 'ai_challenge') {
+      this._startAIChallenge();
+      return;
+    }
+
+    // [未使用 - 每日挑战已从首页移除]
+    if (this.playMode === 'daily') {
+      this._startDailyGame();
+      return;
+    }
+
     if (this.playMode === 'level') {
       var levelConfig = this.getLevelConfig(this.selectedLevel);
       this.questions = QuestionBank.getLevelQuestions(
@@ -1307,6 +1436,154 @@
     this.hiddenAt = document.hidden ? Date.now() : 0;
     this.shareNotice = '';
     this.goToPage('playing');
+  };
+
+  // [未使用 - AI神经挑战已从首页移除]
+  /**
+   * AI 挑战模式：先获取基础本地题，再异步拉取 AI 题目混入
+   */
+  OppositeGame.prototype._startAIChallenge = function () {
+    var self = this;
+    // 初始化基础状态，立即进入 playing 页面显示 "AI准备中"
+    this.score = 0;
+    this.totalScore = 0;
+    this.combo = 0;
+    this.maxCombo = 0;
+    this.fastestReaction = Infinity;
+    this.answers = [];
+    this.question = null;
+    this.questionStartTime = 0;
+    this.timeLimit = DEFAULT_TIME_LIMIT;
+    this.timerProgress = 1;
+    this.questionAnswered = true;
+    this.feedbackLines = [];
+    this.feedbackEndTime = 0;
+    this.lastRoundScore = 0;
+    this.lastSpeedLabel = '';
+    this.lastComboBonus = 0;
+    this.levelResult = null;
+    this.hiddenAt = document.hidden ? Date.now() : 0;
+    this.shareNotice = '';
+    this.aiQuestions = [];
+    this.aiFetchProgress = { fetched: 0, target: 15 };
+
+    // 先用本地题库作为兜底
+    var localQuestions = QuestionBank.getQuestions({
+      mode: 'challenge',
+      count: QUESTIONS_PER_GAME
+    });
+    this.questions = localQuestions;
+    this.currentIndex = 0;
+
+    // 进入 playing 页（会显示AI加载状态）
+    this.goToPage('playing');
+
+    // 异步拉取 AI 题目
+    if (window.AppApi && typeof window.AppApi.fetchAIQuestionBatch === 'function') {
+      window.AppApi.fetchAIQuestionBatch(
+        15,                      // 目标 15 道 AI 题
+        'medium',                // 默认中等难度
+        [],                      // 不排除任何题型
+        function (fetched, total) {
+          self.aiFetchProgress = { fetched: fetched, target: total };
+        },
+        function (aiQuestions) {
+          self._onAIQuestionsReady(aiQuestions, localQuestions);
+        }
+      );
+    } else {
+      // API 不可用时直接用本地题库
+      this._onAIQuestionsReady([], localQuestions);
+    }
+  };
+
+  // [未使用 - AI神经挑战已从首页移除]
+  /**
+   * AI 题目就绪后混入题库
+   */
+  OppositeGame.prototype._onAIQuestionsReady = function (aiQuestions, localQuestions) {
+    var self = this;
+    var mixed = [];
+    var aiReady = Array.isArray(aiQuestions) ? aiQuestions.filter(function (q) {
+      return q && q.instruction_text;
+    }) : [];
+
+    // 标准化 AI 题目字段
+    var normalizedAI = aiReady.map(function (q) {
+      return {
+        id: 'ai_' + (q.id || Math.random().toString(36).slice(2, 8)),
+        type: q.type || 'action',
+        instruction_text: q.instruction_text,
+        prompt_color: q.prompt_color || '#FFFFFF',
+        correct_action: q.correct_action,
+        correct_action_index: q.correct_action_index,
+        options: (q.options || []).map(function (o, i) {
+          return {
+            id: o.id || o.action || ('opt_' + i),
+            label: o.label || o.action || ('选项' + (i + 1)),
+            action: o.action || ('action_' + i),
+            color: o.color,
+            textColor: o.textColor,
+            position: o.position
+          };
+        }),
+        time_limit_ms: q.time_limit_ms || 1200,
+        difficulty: q.difficulty || 2,
+        source: q.source || 'ai'
+      };
+    });
+
+    // 交错混入：每 3 道本地题插入 2 道 AI 题
+    var aiIdx = 0, localIdx = 0;
+    while (mixed.length < QUESTIONS_PER_GAME) {
+      // 先加本地题
+      for (var li = 0; li < 2 && localIdx < localQuestions.length && mixed.length < QUESTIONS_PER_GAME; li++) {
+        mixed.push(localQuestions[localIdx]);
+        localIdx++;
+      }
+      // 再加 AI 题
+      for (var ai = 0; ai < 1 && aiIdx < normalizedAI.length && mixed.length < QUESTIONS_PER_GAME; ai++) {
+        mixed.push(normalizedAI[aiIdx]);
+        aiIdx++;
+      }
+      // 如果 AI 题用完了，全补本地题
+      if (aiIdx >= normalizedAI.length && localIdx < localQuestions.length && mixed.length < QUESTIONS_PER_GAME) {
+        while (localIdx < localQuestions.length && mixed.length < QUESTIONS_PER_GAME) {
+          mixed.push(localQuestions[localIdx]);
+          localIdx++;
+        }
+      }
+      // 如果本地题用完，全补 AI 题
+      if (localIdx >= localQuestions.length && aiIdx < normalizedAI.length && mixed.length < QUESTIONS_PER_GAME) {
+        while (aiIdx < normalizedAI.length && mixed.length < QUESTIONS_PER_GAME) {
+          mixed.push(normalizedAI[aiIdx]);
+          aiIdx++;
+        }
+      }
+      if (localIdx >= localQuestions.length && aiIdx >= normalizedAI.length) break;
+    }
+
+    // 确保至少有一些题目
+    if (mixed.length === 0) {
+      mixed = localQuestions;
+    }
+
+    // 替换题目
+    this.questions = mixed.slice(0, QUESTIONS_PER_GAME);
+    this.currentIndex = 0;
+    this.aiFetchProgress = { fetched: normalizedAI.length, target: 15 };
+
+    if (this.page === 'playing' && !this.question) {
+      // 如果还在等待第一题，通知可以开始了
+      this.aiFetchProgress.fetched = -1; // 标记已完成
+    }
+
+    // 如果当前正在显示 "AI准备中" 状态，强制刷新并开始
+    if (this.page === 'playing' && this.questionAnswered && this.currentIndex === 0) {
+      this.questionAnswered = false;
+      this.nextQuestion();
+    }
+    this.render();
   };
 
   /**
@@ -1612,6 +1889,7 @@
       };
     }
 
+    // AI 挑战模式也保存到排行榜
     var leaderboardEntry = this.saveToLeaderboard();
     if (leaderboardEntry) {
       leaderboardEntry.answers = this.answers.slice();
@@ -2113,21 +2391,24 @@
     var btnW = CANVAS_W - 68;
     var btnX = (CANVAS_W - btnW) / 2;
     var btnStartY = 282;
+    var splitGap = 12;
+    var splitW = (btnW - splitGap) / 2;
 
+    // Row 1: 闯关模式（全宽）
     this.drawBtn(ctx, btnX, btnStartY, btnW, 58,
-      '强制接通神经（开始游戏）', 'singleStart', 'singleStart', {
+      '闯关模式', 'singleStart', 'singleStart', {
         bg: COLOR_PRIMARY,
         border: COLOR_PRIMARY,
         text: '#07110d',
-        fontSize: 17,
+        fontSize: 15,
         radius: BTN_RADIUS,
         shadowColor: 'rgba(0,245,160,0.32)',
         align: 'left',
-        paddingX: 18,
+        paddingX: 14,
         rightMark: '>>>'
       });
 
-    this.drawBtn(ctx, btnX, btnStartY + 72, btnW, 54,
+    this.drawBtn(ctx, btnX, btnStartY + 70, btnW, 54,
       '接入在线神经  /  ONLINE PK', 'onlinePkStart', 'onlinePkStart', {
         bg: 'rgba(14,22,20,0.96)',
         border: COLOR_INFO,
@@ -2140,9 +2421,7 @@
         rightMark: '>>>'
       });
 
-    var splitGap = 12;
-    var splitW = (btnW - splitGap) / 2;
-    var splitY = btnStartY + 140;
+    var splitY = btnStartY + 138;
     this.drawBtn(ctx, btnX, splitY, splitW, 52,
       '双人神经互换', 'localPkStart', 'localPkStart', {
         bg: 'rgba(14,22,20,0.96)',
@@ -2179,7 +2458,8 @@
         radius: BTN_RADIUS,
         shadowColor: 'rgba(0,245,160,0.10)'
       });
-    this.drawBtn(ctx, btnX + splitW + splitGap, utilityY, splitW, 44,
+
+    this.drawBtn(ctx, btnX + splitW + splitGap, utilityY, splitW, 46,
       '传播病例', 'shareHome', 'shareHome', {
         bg: 'rgba(14,22,20,0.92)',
         border: 'rgba(255,255,255,0.20)',
@@ -2194,7 +2474,7 @@
       ctx.fillStyle = COLOR_WARNING;
       ctx.font = '12px ' + FONT_FAMILY;
       ctx.textAlign = 'center';
-      ctx.fillText(notice, CANVAS_W / 2, utilityY + 76);
+      ctx.fillText(notice, CANVAS_W / 2, utilityY + 64);
     }
     this.drawMicroLabel(ctx, 'ENTER / SPACE : LEVEL SELECT', CANVAS_W / 2, 704,
       'center', 'rgba(255,255,255,0.28)');
@@ -2718,6 +2998,19 @@
     ctx.textAlign = 'center';
     ctx.fillText('完成 ' + this.onlineRound + ' 题', CANVAS_W / 2, 340);
 
+    // 显示总用时和最高连击
+    var myTime = res.myTotalTimeMs ? (res.myTotalTimeMs / 1000).toFixed(1) + 's' : '--';
+    var oppTime = res.opponentTotalTimeMs ? (res.opponentTotalTimeMs / 1000).toFixed(1) + 's' : '--';
+    var timeStr = '总用时  我 ' + myTime + '  |  ' + (this.opponentName || '对手') + ' ' + oppTime;
+    ctx.fillStyle = 'rgba(255,255,255,0.45)';
+    ctx.font = '12px ' + FONT_MONO;
+    ctx.fillText(timeStr, CANVAS_W / 2, 370);
+
+    var myCombo = res.myMaxCombo || 0;
+    var oppCombo = res.opponentMaxCombo || 0;
+    var comboStr = '最高连击  我 x' + myCombo + '  |  ' + (this.opponentName || '对手') + ' x' + oppCombo;
+    ctx.fillText(comboStr, CANVAS_W / 2, 392);
+
     this.drawBtn(ctx, 34, 430, CANVAS_W - 68, 56,
       '再来一局  /  REMATCH', 'pkRematch', 'pkRematch', {
         bg: COLOR_PRIMARY, border: COLOR_PRIMARY, text: '#07110d',
@@ -2732,18 +3025,22 @@
     this.drawCompactBackButton(ctx);
 
     var isPractice = this.playMode === 'practice';
+    var isAI = this.playMode === 'ai_challenge';
     var levelConfig = this.playMode === 'level' ? this.getLevelConfig(this.selectedLevel) : null;
-    this.drawMicroLabel(ctx, levelConfig ? 'LEVEL 0' + levelConfig.level : 'MISSION TRAINING',
+    this.drawMicroLabel(ctx, levelConfig ? 'LEVEL 0' + levelConfig.level :
+      isAI ? 'AI CHALLENGE' : 'MISSION TRAINING',
       28, 60, 'left');
-    ctx.fillStyle = COLOR_PRIMARY;
+    ctx.fillStyle = isAI ? '#C08FFF' : COLOR_PRIMARY;
     ctx.font = 'bold 29px ' + FONT_MONO;
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
-    ctx.fillText(levelConfig ? levelConfig.title : isPractice ? '轻松练习' : '训练说明', 28, 96);
+    ctx.fillText(levelConfig ? levelConfig.title : isAI ? 'AI神经挑战' :
+      isPractice ? '轻松练习' : '训练说明', 28, 96);
     ctx.fillStyle = COLOR_SECONDARY;
     ctx.font = '13px ' + FONT_FAMILY;
     ctx.fillText(levelConfig
       ? levelConfig.label + ' · 10 题 · 每题 ' + levelConfig.timeLimit + 'ms · 6 题过关'
+      : isAI ? 'AI 实时生成 20 道反直觉题 · 每题 1200ms · 挑战未知'
       : isPractice ? '8 道简单题，时间更宽松' : '读取指令，然后执行相反动作', 28, 126);
 
     var examples = [
@@ -2780,16 +3077,20 @@
     ctx.fillText('反应要快，但别相信第一直觉。', 28, 540);
 
     var btnW = CANVAS_W - 56, btnH = 54;
+    var tutorialBtnBg = isAI ? 'rgba(180,55,255,0.85)' : COLOR_PRIMARY;
+    var tutorialBtnBorder = isAI ? 'rgba(168,85,247,0.70)' : COLOR_PRIMARY;
+    var tutorialBtnGlow = isAI ? 'rgba(180,55,255,0.28)' : 'rgba(0,245,160,0.24)';
     this.drawBtn(ctx, 28, 668, btnW, btnH,
-      isPractice ? '开始练习  /  PRACTICE' :
+      isAI ? 'AI 生成挑战  /  BEGIN' :
+        isPractice ? '开始练习  /  PRACTICE' :
         levelConfig ? '开始第 ' + levelConfig.level + ' 关  /  BEGIN' : '开始任务  /  BEGIN',
       'tutorialStart', 'tutorialStart', {
-        bg: COLOR_PRIMARY,
-        border: COLOR_PRIMARY,
+        bg: tutorialBtnBg,
+        border: tutorialBtnBorder,
         text: '#07110d',
         fontSize: 15,
         radius: BTN_RADIUS,
-        glow: 'rgba(0,245,160,0.24)'
+        glow: tutorialBtnGlow
       });
   };
 
@@ -2801,10 +3102,44 @@
     var q = this.question;
     this.drawCompactBackButton(ctx);
     if (!q) {
-      ctx.fillStyle = COLOR_SECONDARY;
-      ctx.font = 'bold 16px ' + FONT_FAMILY;
-      ctx.textAlign = 'center';
-      ctx.fillText('正在准备题目...', CANVAS_W / 2, 390);
+      // ── AI 题目加载中状态 ──
+      var isAILoading = this.playMode === 'ai_challenge' &&
+        this.aiFetchProgress && this.aiFetchProgress.fetched >= 0 &&
+        this.aiFetchProgress.fetched < this.aiFetchProgress.target;
+      if (isAILoading) {
+        var progressPct = Math.round(
+          this.aiFetchProgress.fetched / Math.max(1, this.aiFetchProgress.target) * 100
+        );
+        this.drawPanel(ctx, 50, 260, CANVAS_W - 100, 160, {
+          border: 'rgba(168,85,247,0.50)',
+          fill: 'rgba(12,10,18,0.95)',
+          accentColor: '#C08FFF'
+        });
+        this.drawMicroLabel(ctx, 'AI NEURAL LINK', CANVAS_W / 2, 300, 'center', '#C08FFF');
+        ctx.fillStyle = '#C08FFF';
+        ctx.font = 'bold 18px ' + FONT_FAMILY;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('AI 正在生成题目...', CANVAS_W / 2, 340);
+        ctx.fillStyle = COLOR_SECONDARY;
+        ctx.font = '13px ' + FONT_FAMILY;
+        ctx.fillText('已生成 ' + this.aiFetchProgress.fetched + ' / ' +
+          this.aiFetchProgress.target + ' 题 (' + progressPct + '%)', CANVAS_W / 2, 370);
+        // 动画点
+        var dots = Date.now() / 300;
+        for (var di = 0; di < 3; di++) {
+          var alpha = 0.3 + 0.5 * Math.abs(Math.sin(dots + di * 2));
+          ctx.fillStyle = 'rgba(168,85,247,' + alpha.toFixed(2) + ')';
+          ctx.beginPath();
+          ctx.arc(CANVAS_W / 2 - 24 + di * 24, 400, 6, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      } else {
+        ctx.fillStyle = COLOR_SECONDARY;
+        ctx.font = 'bold 16px ' + FONT_FAMILY;
+        ctx.textAlign = 'center';
+        ctx.fillText('正在准备题目...', CANVAS_W / 2, 390);
+      }
       return;
     }
 
@@ -2902,9 +3237,12 @@
     this.drawMicroLabel(ctx, this.gameMode === 'local_pk'
       ? 'PLAYER ' + this.currentPlayer
       : this.playMode === 'practice' ? 'PRACTICE'
+      : this.playMode === 'ai_challenge' ? 'AI CHALLENGE'
+      : this.playMode === 'daily' ? 'DAILY ' + (this.dailyDate || '')
       : this.playMode === 'level' ? 'LEVEL 0' + this.selectedLevel
       : this.gameMode.toUpperCase(), CANVAS_W / 2, 28, 'center',
-      'rgba(255,255,255,0.58)');
+      this.playMode === 'ai_challenge' ? 'rgba(192,143,255,0.78)' :
+      this.playMode === 'daily' ? '#FFB74D' : 'rgba(255,255,255,0.58)');
     this.drawMicroLabel(ctx, 'SCORE ' + this.getSafeTotalScore(),
       CANVAS_W - 22, 28, 'right', COLOR_WARNING);
 
@@ -3200,7 +3538,11 @@
       this.drawMicroLabel(ctx, 'DIFF ' + pkDiffStr, CANVAS_W / 2, 198,
         'center', pkDiffColor);
     } else {
+      var isAI = this.playMode === 'ai_challenge';
+      var isDaily = this.playMode === 'daily';
       var resultLabel = this.playMode === 'practice' ? 'PRACTICE COMPLETE' :
+        isAI ? 'AI CHALLENGE COMPLETE' :
+        isDaily ? 'DAILY CHALLENGE' :
         isLevel ? (levelResult.passed ? 'LEVEL CLEAR' : 'LEVEL FAILED') : 'MISSION CLEAR';
       this.drawMicroLabel(ctx, resultLabel,
         CANVAS_W / 2, 48, 'center',
@@ -3292,7 +3634,9 @@
             : levelResult.passed
               ? '过关！这一关已经稳住了。'
               : '再试一次，答对 6 题即可过关。')
-        : (this.resultRoast || '再来一局，看看还能不能更快。');
+        : isDaily
+          ? '每日挑战完成！明天再来刷新排名，同样的题大家公平竞争。'
+          : (this.resultRoast || '再来一局，看看还能不能更快。');
     this.drawMicroLabel(ctx, 'SYSTEM MESSAGE', 40, roastY, 'left',
       'rgba(255,216,92,0.72)');
     ctx.fillStyle = COLOR_SECONDARY;

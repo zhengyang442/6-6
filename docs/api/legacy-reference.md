@@ -4,7 +4,7 @@
 
 ## 快速接入步骤
 
-1. 确保后端已启动（问殷文才要 `start-dev.bat` 双击即可）
+1. 确保后端已启动（双击 `start-dev.bat` 即可）
 2. 在你项目的 `index.html` 中引入 `api-client.js`
 3. 直接调用函数，已封装好
 

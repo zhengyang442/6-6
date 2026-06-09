@@ -1,6 +1,8 @@
 /**
  * 《反着来》题库适配层
  * 依赖：data/question-pool/*Questions.js（由 content/questions 生成）
+ *
+ * @author 四个菜鸟想上天团队
  */
 const QuestionBank = (function (global) {
   "use strict";
@@ -12,7 +14,13 @@ const QuestionBank = (function (global) {
     medium: parts.medium || [],
     hard: parts.hard || [],
     boss: parts.boss || [],
+    motion: [],
   };
+
+  // 加载体感题（来自独立的 MotionQuestionPool）
+  if (global.MotionQuestionPool) {
+    pools.motion = global.MotionQuestionPool;
+  }
 
   var challengeCurve = [
     { difficulty: "easy", count: 5 },
@@ -168,6 +176,12 @@ const QuestionBank = (function (global) {
 
     if (Array.isArray(difficultyOrMix)) {
       selected = difficultyOrMix.reduce(function (questions, stage) {
+        if (stage.difficulty === 'motion') {
+          // 体感题直接规范化，不经过 P0 过滤
+          var motionPool = (pools.motion || []).slice();
+          var picked = shuffle(motionPool).slice(0, stage.count);
+          return questions.concat(picked.map(normalizeQuestion));
+        }
         return questions.concat(sampleStable(stage.difficulty, stage.count));
       }, []);
       selected = shuffle(selected).filter(function (question, index, questions) {
@@ -175,6 +189,9 @@ const QuestionBank = (function (global) {
           return candidate.id === question.id;
         }) === index;
       }).slice(0, requestedCount);
+    } else if (difficultyOrMix === 'motion') {
+      var motionPool = (pools.motion || []).slice();
+      selected = shuffle(motionPool).slice(0, requestedCount).map(normalizeQuestion);
     } else {
       if (!pools[difficultyOrMix]) return [];
       selected = sampleStable(difficultyOrMix, requestedCount);
@@ -225,10 +242,14 @@ const QuestionBank = (function (global) {
         stableP0: pools[difficulty].filter(isStableP0).length,
       };
     });
+    byDifficulty.motion = {
+      total: pools.motion.length,
+      stableP0: pools.motion.length,
+    };
     return {
       total: difficulties.reduce(function (sum, difficulty) {
         return sum + pools[difficulty].length;
-      }, 0),
+      }, 0) + pools.motion.length,
       byDifficulty: byDifficulty,
     };
   }

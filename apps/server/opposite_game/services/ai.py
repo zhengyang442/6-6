@@ -1,3 +1,11 @@
+"""
+《反着来》AI 出题服务（通义千问 / DeepSeek）
+
+@author 四个菜鸟想上天团队
+
+[未使用] 当前未配置 API Key，AI 出题功能默认降级到本地题库。
+如需启用：在 .env 中设置 TONGYI_API_KEY 或 DEEPSEEK_API_KEY。
+"""
 import json
 import random
 import re

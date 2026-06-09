@@ -110,9 +110,6 @@ requestAnimationFrame(loop);
  *   INTRO → PLAYING → FEEDBACK → PLAYING | GAMEOVER
  * 
  * 使用：前端队友 copy 这个文件 + api-client.js → 订阅事件 → 渲染
- * 
- * @author 殷文才（后端/架构）
- * @for 前端A — 接入即用，不用想游戏规则
  */
 
 import { generateQuestion, analyzePerformance } from "./api-client.js";

@@ -8,7 +8,7 @@ from flask_socketio import emit
 from ..services.questions import normalize_for_online
 
 
-DEFAULT_ROUND_TIME_MS = 8000
+DEFAULT_ROUND_TIME_MS = 3000
 DEFAULT_MATCH_START_DELAY_MS = 2000
 match_queue = []
 rooms = {}
@@ -36,6 +36,18 @@ def _public_question(question):
         for key, value in question.items()
         if key not in {"correct_action", "correct_action_index"}
     }
+
+
+def _difficulty_for_round(round_number):
+    """PK 难度递进曲线：前5轮简单，之后逐步升难。"""
+    if round_number <= 5:
+        return 1   # easy
+    elif round_number <= 12:
+        return 2   # medium
+    elif round_number <= 18:
+        return 3   # hard
+    else:
+        return 4   # boss
 
 
 def register_socket_handlers(socketio):
@@ -70,8 +82,13 @@ def register_socket_handlers(socketio):
         room["active"] = False
         room["round_open"] = False
         scores = dict(room["scores"])
+        total_times = dict(room.get("total_reaction_time", {}))
         highest = max(scores.values(), default=0)
         winners = [sid for sid, score in scores.items() if score == highest]
+        # 平局时用总用时决胜负（用时少者胜）
+        if len(winners) > 1:
+            fastest_time = min(total_times[sid] for sid in winners)
+            winners = [sid for sid in winners if total_times[sid] == fastest_time]
         is_draw = len(winners) != 1
         result_by_sid = {}
         for sid, username in room["players"].items():
@@ -83,6 +100,7 @@ def register_socket_handlers(socketio):
                     (answer.get("combo", 0) for answer in answers.values()),
                     default=0,
                 ),
+                "total_time_ms": total_times.get(sid, 0),
                 "outcome": (
                     "draw"
                     if is_draw
@@ -115,7 +133,15 @@ def register_socket_handlers(socketio):
                 game_over_payload = finish_room_locked(room_id, room)
             else:
                 service = current_app.extensions["question_service"]
-                question = normalize_for_online(service.fallback())
+                # 难度递进曲线
+                difficulty = _difficulty_for_round(room["round"] + 1)
+                question = normalize_for_online(
+                    service.fallback(
+                        difficulty=difficulty,
+                        exclude_ids=room["used_question_ids"],
+                    )
+                )
+                room["used_question_ids"].add(question["id"])
                 room["current_question"] = question
                 room["round"] += 1
                 room["round_token"] = uuid.uuid4().hex
@@ -170,11 +196,13 @@ def register_socket_handlers(socketio):
                 for sid in room["players"]:
                     if round_number not in room["answers"][sid]:
                         room["combo"][sid] = 0
+                        room["total_reaction_time"][sid] += room["round_time_ms"]
                         room["answers"][sid][round_number] = {
                             "correct": False,
                             "timed_out": True,
                             "reaction_time_ms": room["round_time_ms"],
                             "combo": 0,
+                            "round_score": 0,
                         }
                 room["round_open"] = False
                 score_update = score_payload(room_id, room)
@@ -267,6 +295,8 @@ def register_socket_handlers(socketio):
                     "scores": {first["sid"]: 0, second["sid"]: 0},
                     "combo": {first["sid"]: 0, second["sid"]: 0},
                     "answers": {first["sid"]: {}, second["sid"]: {}},
+                    "total_reaction_time": {first["sid"]: 0, second["sid"]: 0},
+                    "used_question_ids": set(),
                     "current_question": None,
                     "round": 0,
                     "max_rounds": int(
@@ -370,10 +400,18 @@ def register_socket_handlers(socketio):
                 )
 
             if correct:
-                room["scores"][sid] += 1
+                combo_bonus = room["combo"][sid] // 3
+                speed_bonus = 1 if elapsed_ms < 2000 else 0
+                round_score = 1 + combo_bonus + speed_bonus
+                room["scores"][sid] += round_score
                 room["combo"][sid] += 1
             else:
+                round_score = 0
                 room["combo"][sid] = 0
+            room["total_reaction_time"][sid] += min(
+                elapsed_ms,
+                room["round_time_ms"],
+            )
             room["answers"][sid][round_number] = {
                 "correct": correct,
                 "timed_out": timed_out,
@@ -382,6 +420,7 @@ def register_socket_handlers(socketio):
                     room["round_time_ms"],
                 ),
                 "combo": room["combo"][sid],
+                "round_score": round_score,
             }
             result_payload = {
                 "room_id": room_id,

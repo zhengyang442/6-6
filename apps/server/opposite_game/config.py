@@ -1,3 +1,8 @@
+"""
+《反着来》应用配置
+
+@author 四个菜鸟想上天团队
+"""
 import logging
 import os
 from pathlib import Path
@@ -19,13 +24,14 @@ class Config:
         os.getenv("CHALLENGE_DIR", VAR_DIR / "challenges")
     )
     FALLBACK_JSON = CONTENT_DIR / "questions" / "fallback.json"
+    P0_QUESTIONS_JSON = CONTENT_DIR / "questions" / "p0-questions.json"
 
     PORT = int(os.getenv("PORT", "8888"))
     LOG_LEVEL = getattr(
         logging, os.getenv("LOG_LEVEL", "INFO").upper(), logging.INFO
     )
     SOCKETIO_ASYNC_MODE = os.getenv("SOCKETIO_ASYNC_MODE") or None
-    ONLINE_ROUND_TIME_MS = int(os.getenv("ONLINE_ROUND_TIME_MS", "8000"))
+    ONLINE_ROUND_TIME_MS = int(os.getenv("ONLINE_ROUND_TIME_MS", "3000"))
     ONLINE_MATCH_START_DELAY_MS = int(
         os.getenv("ONLINE_MATCH_START_DELAY_MS", "2000")
     )

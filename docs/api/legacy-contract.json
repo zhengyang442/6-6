@@ -5,8 +5,8 @@
     "version": "1.0.0",
     "description": "前端与后端之间的接口定义。任何改动必须更新此文件并通知全队。",
     "contact": {
-      "name": "殷文才（后端/架构）",
-      "email": "24251052@bjtu.edu.cn"
+      "name": "项目维护者",
+      "email": ""
     }
   },
   "servers": [

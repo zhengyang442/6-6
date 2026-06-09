@@ -1,6 +1,11 @@
 /**
  * 《反着来》API 客户端
  * 同源 API 客户端。供页面功能和调试工具复用。
+ *
+ * @author 四个菜鸟想上天团队
+ *
+ * [未使用] fetchAIQuestionBatch() — AI神经挑战已从首页移除
+ * [未使用] getDailyChallenge() — 每日挑战已从首页移除
  */
 (function () {
   'use strict';
@@ -129,6 +134,82 @@
       .catch(function (err) { callback(err, null); });
   }
 
+  // ── AI 批量出题 ───────────────────────────────
+  function fetchAIQuestionBatch(count, difficulty, excludeTypes, onEach, onDone) {
+    var fetched = [];
+    var errors = 0;
+    var done = false;
+    var maxConcurrent = 3;
+
+    function tryFetch() {
+      if (done) return;
+      if (fetched.length + errors >= count * 2) {
+        // 所有请求已返回（含失败），结束
+        finish();
+        return;
+      }
+    }
+
+    function finish() {
+      if (done) return;
+      done = true;
+      onDone(fetched);
+    }
+
+    // 并发请求，每个题目独立获取
+    var pending = 0;
+    function next() {
+      while (pending < maxConcurrent && fetched.length + errors + pending < count) {
+        pending++;
+        fetchQuestion(
+          difficulty,
+          excludeTypes || [],
+          'any',
+          (function () {
+            var called = false;
+            return function (err, question) {
+              pending--;
+              if (called) return;
+              called = true;
+              if (!err && question) {
+                fetched.push(question);
+                if (onEach) onEach(fetched.length, count);
+              } else {
+                errors++;
+              }
+              if (fetched.length >= count) {
+                finish();
+              } else if (fetched.length + errors >= count * 2) {
+                finish();
+              } else {
+                next();
+              }
+            };
+          })()
+        );
+      }
+    }
+
+    next();
+
+    // 超时兜底（10 秒）
+    setTimeout(function () {
+      if (!done && fetched.length === 0) {
+        finish();
+      }
+    }, 10000);
+  }
+
+  function getDailyChallenge(callback) {
+    fetch(API_BASE + '/api/daily-challenge')
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (data) { callback(null, data); })
+      .catch(function (err) { callback(err, null); });
+  }
+
   // 暴露到全局
   window.AppApi = {
     fetchQuestion: fetchQuestion,
@@ -138,7 +219,9 @@
     getChallenge: getChallenge,
     health: health,
     submitLeaderboard: submitLeaderboard,
-    getLeaderboard: getLeaderboard
+    getLeaderboard: getLeaderboard,
+    fetchAIQuestionBatch: fetchAIQuestionBatch,
+    getDailyChallenge: getDailyChallenge
   };
 
   console.log('[反着来] API Client 加载完成，BASE =', API_BASE);

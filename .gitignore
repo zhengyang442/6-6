@@ -1,0 +1,31 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# 环境变量
+.env
+
+# 运行时数据
+var/game.db
+var/challenges/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# 构建产物
+dist-offline/
+dist-offline.zip
+
+# Node
+node_modules/

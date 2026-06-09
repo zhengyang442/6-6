@@ -1,3 +1,8 @@
+"""
+《反着来》Flask 应用工厂
+
+@author 四个菜鸟想上天团队
+"""
 import logging
 
 from flask import Flask
@@ -32,7 +37,8 @@ def create_app(test_config=None):
     )
 
     app.extensions["question_service"] = QuestionService(
-        app.config["FALLBACK_JSON"]
+        app.config["P0_QUESTIONS_JSON"],
+        fallback_path=app.config.get("FALLBACK_JSON"),
     )
     app.extensions["leaderboard_repository"] = LeaderboardRepository(
         app.config["DB_PATH"]

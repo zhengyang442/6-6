@@ -1,5 +1,5 @@
 // api-client.js —— 《反着来》前端对接示例
-// 作者：殷文才 | 版本：2026-06-06
+// 版本：2026-06-06
 // 用法：import { generateQuestion, submitAnswer } from './api-client.js'
 
 const BASE = window.location.origin;  // 自动适配 localhost 或云端域名
